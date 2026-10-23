@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AR model</title>
+  <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/3.5.0/model-viewer.min.js"></script>
+  <style>
+    html, body { margin: 0; height: 100%; font-family: sans-serif; background: #f2f2f2; }
+    model-viewer { width: 100%; height: 100%; --poster-color: transparent; }
+    .ar-button {
+      position: absolute; bottom: 24px; left: 50%; transform: translateX(-50%);
+      padding: 14px 28px; font-size: 18px; border: 0; border-radius: 12px;
+      background: #1a73e8; color: #fff; cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <model-viewer
+    src="model.glb"
+    alt="3D model"
+    ar
+    ar-modes="scene-viewer webxr quick-look"
+    ar-scale="auto"
+    camera-controls
+    touch-action="pan-y"
+    auto-rotate
+    shadow-intensity="1"
+    environment-image="neutral"
+    exposure="1">
+    <button slot="ar-button" class="ar-button">Zobrazit v AR</button>
+  </model-viewer>
+</body>
+</html>
